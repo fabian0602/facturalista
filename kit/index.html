@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#07161d">
+  <title>Kit de publicación — @facturalistard</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #07161d;
+      --ink-2: #0b232b;
+      --teal: #0f766e;
+      --mint: #5eead4;
+      --text: #f4fbfa;
+      --muted: #a9c6c2;
+      --line: rgba(94, 234, 212, .18);
+      --card: rgba(255, 255, 255, .055);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(800px 640px at 92% -4%, rgba(20, 184, 166, .24), transparent 64%),
+        linear-gradient(160deg, #07161d 0%, #0a2029 52%, #0b2f2d 100%);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 72px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 38px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text); }
+    .mark {
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+      background: linear-gradient(145deg, #14b8a6, #0f766e);
+      font-family: Sora, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -.06em;
+      box-shadow: 0 14px 34px rgba(20, 184, 166, .28);
+    }
+    .brand strong { display: block; font-family: Sora, sans-serif; font-size: 17px; letter-spacing: -.01em; }
+    .brand small { display: block; margin-top: 3px; font-size: 11px; letter-spacing: .16em; color: var(--muted); text-transform: uppercase; }
+    .handle { font-family: Sora, sans-serif; font-size: 15px; color: var(--mint); }
+
+    .hero { margin-bottom: 42px; }
+    .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--mint); margin-bottom: 12px; }
+    h1 { font-family: Sora, sans-serif; font-size: clamp(34px, 7vw, 58px); line-height: 1.05; letter-spacing: -.045em; max-width: 760px; }
+    h1 span { color: var(--mint); }
+    .hero p { margin-top: 18px; max-width: 640px; color: var(--muted); font-size: 17px; }
+
+    section { margin-bottom: 44px; }
+    .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px; }
+    .step {
+      flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+      background: rgba(94, 234, 212, .12); border: 1px solid var(--line); color: var(--mint);
+      font-family: Sora, sans-serif; font-size: 13px; font-weight: 700;
+    }
+    h2 { font-family: Sora, sans-serif; font-size: clamp(21px, 4vw, 28px); letter-spacing: -.025em; line-height: 1.2; }
+    .section-head p { color: var(--muted); font-size: 14px; margin-left: auto; }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 22px; }
+    .profile { display: grid; grid-template-columns: 118px 1fr; gap: 22px; align-items: start; }
+    .avatar { width: 118px; height: 118px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(94, 234, 212, .35); background: #0b232b; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile h3 { font-family: Sora, sans-serif; font-size: 21px; margin-bottom: 4px; }
+    .profile .role { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+    .fields { display: grid; gap: 10px; }
+    .field { display: grid; grid-template-columns: 92px 1fr auto; gap: 10px; align-items: center; padding: 10px 12px; background: rgba(0, 0, 0, .18); border-radius: 12px; }
+    .field dt { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .field dd { font-size: 14px; overflow-wrap: anywhere; }
+    .field a { color: var(--mint); text-decoration: none; }
+    .copy {
+      border: 1px solid var(--line); background: rgba(94, 234, 212, .1); color: var(--mint);
+      border-radius: 9px; padding: 7px 10px; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy:active { transform: translateY(1px); }
+
+    .bio {
+      margin-top: 14px; background: rgba(0, 0, 0, .22); border-radius: 12px; padding: 14px 16px;
+      white-space: pre-line; font-size: 15px; border-left: 3px solid var(--mint);
+    }
+    .bio-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .bio-head span { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .shot { display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #0b232b; position: relative; }
+    .shot img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+    .shot span {
+      position: absolute; left: 8px; top: 8px; padding: 4px 8px; border-radius: 999px;
+      background: rgba(7, 22, 29, .82); border: 1px solid var(--line); color: var(--mint);
+      font-family: Sora, sans-serif; font-size: 11px; letter-spacing: .08em;
+    }
+
+    .caption {
+      margin-top: 16px; background: rgba(0, 0, 0, .22); border: 1px solid var(--line);
+      border-radius: 16px; padding: 16px;
+    }
+    .caption pre {
+      white-space: pre-wrap; overflow-wrap: anywhere; font-family: Inter, "Segoe UI", sans-serif;
+      font-size: 14px; line-height: 1.55; color: #d9ebe8; max-height: 300px; overflow: auto;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 12px; padding: 12px 16px; font: inherit; font-size: 14px; font-weight: 700;
+      text-decoration: none; cursor: pointer; border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--mint); color: #06251f; box-shadow: 0 12px 30px rgba(94, 234, 212, .18); }
+    .btn-ghost { background: transparent; border-color: var(--line); color: var(--mint); }
+
+    .covers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .cover { display: block; text-decoration: none; color: var(--text); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #0b232b; }
+    .cover img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .cover strong { display: block; padding: 9px 10px; font-size: 12px; font-weight: 600; color: var(--muted); }
+
+    .tip { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 14px; background: rgba(251, 191, 36, .09); border: 1px solid rgba(251, 191, 36, .25); color: #fcd34d; font-size: 14px; }
+    .tip strong { color: #fde68a; }
+
+    footer { border-top: 1px solid rgba(255, 255, 255, .09); padding-top: 22px; color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
+    footer a { color: var(--mint); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .wrap { padding: 20px 16px 60px; }
+      header { margin-bottom: 28px; }
+      .brand small { display: none; }
+      .profile { grid-template-columns: 1fr; }
+      .avatar { width: 96px; height: 96px; }
+      .field { grid-template-columns: 1fr auto; gap: 4px 10px; }
+      .field dt { grid-column: 1 / -1; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .section-head p { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="../">
+      <span class="mark">FL</span>
+      <span><strong>FacturaLista RD</strong><small>Kit de publicación</small></span>
+    </a>
+    <span class="handle">@facturalistard</span>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">Listo para publicar</div>
+    <h1>Tu perfil y tu primer post, <span>en el celular.</span></h1>
+    <p>Abre esta página en tu teléfono. Guarda las imágenes, copia los textos y publica. Todo está alineado con el sitio y el WhatsApp del negocio.</p>
+  </div>
+
+  <section>
+    <div class="section-head"><span class="step">01</span><h2>Perfil</h2><p>2 minutos</p></div>
+    <div class="card">
+      <div class="profile">
+        <div class="avatar"><img src="../assets/instagram/avatar-1080.jpg" alt="Avatar de FacturaLista RD" width="118" height="118"></div>
+        <div>
+          <h3>FacturaLista RD | e-CF</h3>
+          <div class="role">Consultor de negocios · República Dominicana</div>
+          <dl class="fields">
+            <div class="field"><dt>Nombre</dt><dd>FacturaLista RD | e-CF</dd><button class="copy" data-copy="FacturaLista RD | e-CF">Copiar</button></div>
+            <div class="field"><dt>Enlace</dt><dd><a href="https://fabian0602.github.io/facturalista/?utm_source=instagram&amp;utm_medium=social" target="_blank" rel="noopener">fabian0602.github.io/facturalista</a></dd><button class="copy" data-copy="https://fabian0602.github.io/facturalista/?utm_source=instagram&utm_medium=social">Copiar</button></div>
+            <div class="field"><dt>WhatsApp</dt><dd>+1 849 408 0206</dd><button class="copy" data-copy="+18494080206">Copiar</button></div>
+          </dl>
+        </div>
+      </div>
+      <div class="bio-head" style="margin-top:18px"><span>Bio</span><button class="copy" data-copy="Facturación electrónica e-CF en RD 🇩🇴&#10;Implemento, pruebo y entrego en 48–72 h&#10;Contadores y clínicas&#10;👇 Diagnóstico por WhatsApp">Copiar bio</button></div>
+      <div class="bio">Facturación electrónica e-CF en RD 🇩🇴
+Implemento, pruebo y entrego en 48–72 h
+Contadores y clínicas
+👇 Diagnóstico por WhatsApp</div>
+      <div class="actions">
+        <a class="btn btn-ghost" href="../assets/instagram/avatar-1080.jpg" download>Descargar foto de perfil</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="step">02</span><h2>Primer post</h2><p>Carrusel de 4 piezas</p></div>
+    <div class="gallery">
+      <a class="shot" href="../assets/instagram/post-01/post-01-01.jpg" target="_blank"><img src="../assets/instagram/post-01/post-01-01.jpg" alt="Portada del carrusel" loading="lazy"><span>01</span></a>
+      <a class="shot" href="../assets/instagram/post-01/post-01-02.jpg" target="_blank"><img src="../assets/instagram/post-01/post-01-02.jpg" alt="Causa técnica" loading="lazy"><span>02</span></a>
+      <a class="shot" href="../assets/instagram/post-01/post-01-03.jpg" target="_blank"><img src="../assets/instagram/post-01/post-01-03.jpg" alt="Cómo trabajo" loading="lazy"><span>03</span></a>
+      <a class="shot" href="../assets/instagram/post-01/post-01-04.jpg" target="_blank"><img src="../assets/instagram/post-01/post-01-04.jpg" alt="Contacto y sitio web" loading="lazy"><span>04</span></a>
+    </div>
+    <div class="tip" style="margin-top:14px"><span>i</span><span><strong>Para guardarlas:</strong> toca una imagen y mantén presionada hasta que aparezca “Guardar en Fotos” (iPhone) o “Descargar imagen” (Android). Deben ir en orden 01 → 04.</span></div>
+
+    <div class="caption">
+      <div class="bio-head"><span>Caption</span><button class="copy" data-copy="Soy Fabian Almonte y ayudo a negocios en República Dominicana a dejar la facturación electrónica funcionando.&#10;&#10;No soy contador y no doy asesoría fiscal. Hago la parte técnica: configuro el emisor, el certificado, la numeración y las pruebas con la DGII.&#10;&#10;Trabajo con PYMEs, con contadores que quieren delegar la implementación y con clínicas que quieren aparecer cuando alguien pregunta a la IA.&#10;&#10;48–72 horas por cliente. 30 días de soporte.&#10;&#10;Si tu operación todavía no emite e-CF, escríbeme por WhatsApp y te hago un diagnóstico de 10 minutos. Si no aplica, te lo digo.&#10;&#10;El checklist y el detalle del servicio están en el enlace de la bio.&#10;&#10;#facturaelectronica #eCF #DGII #contadoresRD #pymesRD #SantoDomingo #RepublicaDominicana">Copiar caption</button></div>
+      <pre>Soy Fabian Almonte y ayudo a negocios en República Dominicana a dejar la facturación electrónica funcionando.
+
+No soy contador y no doy asesoría fiscal. Hago la parte técnica: configuro el emisor, el certificado, la numeración y las pruebas con la DGII.
+
+Trabajo con PYMEs, con contadores que quieren delegar la implementación y con clínicas que quieren aparecer cuando alguien pregunta a la IA.
+
+48–72 horas por cliente. 30 días de soporte.
+
+Si tu operación todavía no emite e-CF, escríbeme por WhatsApp y te hago un diagnóstico de 10 minutos. Si no aplica, te lo digo.
+
+El checklist y el detalle del servicio están en el enlace de la bio.
+
+#facturaelectronica #eCF #DGII #contadoresRD #pymesRD #SantoDomingo #RepublicaDominicana</pre>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="../assets/instagram/kit-post-01.zip" download>Descargar las 4 imágenes</a>
+      <a class="btn btn-ghost" href="../assets/instagram/caption-post-01.txt" download>Descargar caption</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="step">03</span><h2>Destacadas</h2><p>6 portadas</p></div>
+    <div class="covers">
+      <a class="cover" href="../assets/instagram/portada-ecf.jpg" download><img src="../assets/instagram/portada-ecf.jpg" alt="Portada e-CF" loading="lazy"><strong>e-CF</strong></a>
+      <a class="cover" href="../assets/instagram/portada-contadores.jpg" download><img src="../assets/instagram/portada-contadores.jpg" alt="Portada contadores" loading="lazy"><strong>Contadores</strong></a>
+      <a class="cover" href="../assets/instagram/portada-clinicas.jpg" download><img src="../assets/instagram/portada-clinicas.jpg" alt="Portada clínicas" loading="lazy"><strong>Clínicas</strong></a>
+      <a class="cover" href="../assets/instagram/portada-proceso.jpg" download><img src="../assets/instagram/portada-proceso.jpg" alt="Portada proceso" loading="lazy"><strong>Proceso</strong></a>
+      <a class="cover" href="../assets/instagram/portada-precios.jpg" download><img src="../assets/instagram/portada-precios.jpg" alt="Portada precios" loading="lazy"><strong>Precios</strong></a>
+      <a class="cover" href="../assets/instagram/portada-preguntas.jpg" download><img src="../assets/instagram/portada-preguntas.jpg" alt="Portada preguntas" loading="lazy"><strong>Preguntas</strong></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><span class="step">04</span><h2>Antes de publicar</h2></div>
+    <div class="card">
+      <ul style="list-style:none; display:grid; gap:11px; font-size:15px; color:#d9ebe8">
+        <li>☑️ Inicia sesión como <strong>@facturalistard</strong>, no en tu cuenta personal.</li>
+        <li>☑️ Sube el nombre, la bio, el enlace y la foto de perfil.</li>
+        <li>☑️ Publica el carrusel con las 4 imágenes en orden.</li>
+        <li>☑️ Pega el caption y revisa que el enlace de la bio abra el sitio.</li>
+        <li>☑️ Configura el botón de contacto con el WhatsApp <strong>+1 849 408 0206</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 FacturaLista RD · Implementación técnica, no asesoría fiscal.</span>
+    <a href="../">Ver el sitio público →</a>
+  </footer>
+</div>
+
+<script>
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#5eead4;color:#06251f;padding:12px 18px;border-radius:12px;font:600 14px Inter,sans-serif;opacity:0;transition:.2s;z-index:9;pointer-events:none';
+  toast.textContent = 'Copiado';
+  document.body.append(toast);
+
+  async function copyText(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.cssText = 'position:fixed;opacity:0';
+      document.body.append(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    }
+    toast.style.opacity = '1';
+    toast.style.transform = 'translate(-50%,0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translate(-50%,20px)';
+    }, 1400);
+  }
+
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    button.addEventListener('click', () => copyText(button.dataset.copy));
+  });
+</script>
+</body>
+</html>
