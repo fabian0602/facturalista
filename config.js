@@ -8,6 +8,5 @@ window.SITE = {
   whatsappText: "Hola Fabian, vi la página de FacturaLista RD y quiero revisar mi caso.",
   email: "fabianalmonte06@gmail.com",
   instagram: "https://www.instagram.com/facturalistard/", // Ej: https://instagram.com/tu-usuario
-  linkedin: "",  // Ej: https://linkedin.com/in/tu-usuario
-  web: "https://fabian0602.github.io/facturalista/"
+  linkedin: ""   // Ej: https://linkedin.com/in/tu-usuario
 };
