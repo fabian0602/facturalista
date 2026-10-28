@@ -155,6 +155,7 @@
   const animateCount = (el) => {
     const target = Number(el.dataset.count);
     if (!Number.isFinite(target)) return;
+    el.textContent = "0";
     const duration = 1200;
     const start = performance.now();
     const ease = (t) => 1 - Math.pow(1 - t, 3);
@@ -181,10 +182,7 @@
       },
       { threshold: 0.6 }
     );
-    counters.forEach((el) => {
-      el.textContent = "0";
-      countObserver.observe(el);
-    });
+    counters.forEach((el) => countObserver.observe(el));
   }
 
   // Interacciones de puntero fino (sin afectar táctil ni reduced motion).
