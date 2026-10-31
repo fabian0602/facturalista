@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07161d">
+  <title>Facturador Gratuito DGII: guía paso a paso 2026 | FacturaLista RD</title>
+  <meta name="description" content="Cómo solicitar el Facturador Gratuito de la DGII, obtener el certificado digital gratis, pedir los e-NCF y emitir tu primera factura electrónica. Guía basada en el instructivo oficial (v2.0, julio 2026).">
+  <link rel="canonical" href="https://fabian0602.github.io/facturalista/guia-facturador/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Facturador Gratuito DGII: guía paso a paso 2026">
+  <meta property="og:description" content="Requisitos, solicitud, certificado digital gratuito y emisión del primer e-CF. Basado en el instructivo oficial de la DGII.">
+  <meta property="og:url" content="https://fabian0602.github.io/facturalista/guia-facturador/">
+  <meta property="og:image" content="https://fabian0602.github.io/facturalista/assets/og-facturalista.jpg">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #07161d;
+      --teal: #0f766e;
+      --mint: #5eead4;
+      --text: #f4fbfa;
+      --muted: #a9c6c2;
+      --line: rgba(94, 234, 212, .18);
+      --card: rgba(255, 255, 255, .055);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(900px 700px at 94% -6%, rgba(20, 184, 166, .22), transparent 62%),
+        linear-gradient(160deg, #07161d 0%, #0a2029 52%, #0b2f2d 100%);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--mint); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 26px 20px 80px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--text); }
+    .mark {
+      width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(145deg, #14b8a6, #0f766e);
+      font-family: Sora, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: -.06em;
+      box-shadow: 0 12px 30px rgba(20, 184, 166, .26);
+    }
+    .brand strong { display: block; font-family: Sora, sans-serif; font-size: 16px; }
+    .brand small { display: block; font-size: 10px; letter-spacing: .16em; color: var(--muted); text-transform: uppercase; }
+    .back { font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; }
+    .back:hover { color: var(--mint); text-decoration: none; }
+
+    .hero { margin-bottom: 34px; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--mint); margin-bottom: 12px; }
+    h1 { font-family: Sora, sans-serif; font-size: clamp(30px, 6vw, 48px); line-height: 1.06; letter-spacing: -.04em; }
+    h1 span { color: var(--mint); }
+    .hero p { margin-top: 16px; max-width: 640px; color: var(--muted); font-size: 17px; }
+
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 20px; font-size: 12.5px; color: var(--muted); }
+    .meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); }
+
+    .note {
+      border-radius: 16px; padding: 16px 18px; font-size: 14.5px;
+      background: rgba(251, 191, 36, .08); border: 1px solid rgba(251, 191, 36, .26); color: #fcd34d;
+      margin-bottom: 34px;
+    }
+    .note strong { color: #fde68a; }
+    .note a { color: #fde68a; }
+
+    h2 { font-family: Sora, sans-serif; font-size: clamp(20px, 3.4vw, 26px); letter-spacing: -.025em; line-height: 1.25; margin-bottom: 6px; }
+    h3 { font-family: Sora, sans-serif; font-size: 16px; letter-spacing: -.01em; margin-bottom: 8px; }
+    p { margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    section { margin-bottom: 40px; }
+    .lead { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+
+    .reqs { display: grid; gap: 10px; }
+    .req {
+      display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: start;
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; font-size: 14.5px;
+    }
+    .req i {
+      font-style: normal; font-family: Sora, sans-serif; font-size: 12px; font-weight: 700; color: var(--mint);
+      width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: rgba(94, 234, 212, .12);
+    }
+    .req b { font-weight: 600; }
+
+    .step-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; margin-bottom: 14px;
+    }
+    .step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .num {
+      flex: 0 0 auto; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+      background: rgba(94, 234, 212, .14); color: var(--mint);
+      font-family: Sora, sans-serif; font-size: 13px; font-weight: 700;
+    }
+    .step-head h3 { margin: 0; }
+    .step-card p, .step-card li { font-size: 14.5px; color: #dceceb; }
+    ol, ul { padding-left: 20px; margin-bottom: 10px; }
+    li { margin-bottom: 6px; }
+    code {
+      background: rgba(0, 0, 0, .3); border: 1px solid var(--line); border-radius: 5px;
+      padding: 1px 6px; font-size: 13px; color: #bfeee6;
+    }
+    .inline-note { font-size: 13px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; margin: 12px 0 0; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid rgba(255, 255, 255, .08); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    td b { font-weight: 600; }
+    .ok { color: #6ee7b7; }
+    .bad { color: #fca5a5; }
+    .warn { color: #fcd34d; }
+
+    .cta {
+      background: linear-gradient(145deg, rgba(20, 184, 166, .17), rgba(15, 118, 110, .06));
+      border: 1px solid rgba(94, 234, 212, .3); border-radius: 22px; padding: 26px 24px; text-align: left;
+    }
+    .cta h2 { margin-bottom: 8px; }
+    .cta p { color: #d5e9e6; font-size: 15px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; border-radius: 12px; padding: 12px 18px;
+      font-size: 14px; font-weight: 700; border: 1px solid transparent;
+    }
+    .btn:hover { text-decoration: none; }
+    .btn-primary { background: var(--mint); color: #06251f; }
+    .btn-ghost { border-color: var(--line); color: var(--mint); }
+
+    footer { border-top: 1px solid rgba(255, 255, 255, .09); margin-top: 46px; padding-top: 22px; color: var(--muted); font-size: 13px; }
+    footer p { margin-bottom: 8px; }
+    @media (max-width: 640px) {
+      .wrap { padding: 20px 16px 60px; }
+      .brand small { display: none; }
+      .back { display: none; }
+      table { font-size: 13px; }
+      th, td { padding: 9px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../">
+        <span class="mark" aria-hidden="true">F</span>
+        <span>
+          <strong>FacturaLista RD</strong>
+          <small>Implementación e-CF</small>
+        </span>
+      </a>
+      <a class="back" href="../">Volver al inicio</a>
+    </header>
+
+    <div class="hero">
+      <p class="eyebrow">Guía técnica</p>
+      <h1>Facturador Gratuito de la DGII, <span>paso a paso</span></h1>
+      <p>Desde la solicitud en la Oficina Virtual hasta la primera factura electrónica firmada y aceptada. Sin saltarse ningún paso y sin pagar software.</p>
+      <div class="meta">
+        <span><i class="dot" aria-hidden="true"></i> Basada en el instructivo oficial v2.0 (julio 2026)</span>
+        <span><i class="dot" aria-hidden="true"></i> Requisitos verificados: septiembre 2026</span>
+        <span><i class="dot" aria-hidden="true"></i> Revisado: 30 de octubre de 2026</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Antes de empezar, la condición que más gente pasa por alto:</strong> el Facturador Gratuito es solo para contribuyentes que <b>no han sido autorizados antes</b> a emitir e-CF con otro sistema. Si tu cliente ya emite electrónico con Alegra, DGMax o cualquier otro proveedor, esta ruta no aplica: para ese cliente necesitas un proveedor certificado.
+    </div>
+
+    <section id="requisitos">
+      <h2>Los 6 requisitos</h2>
+      <p class="lead">Si falta uno, la solicitud no avanza. Revísalos con el cliente antes de tocar la computadora.</p>
+      <div class="reqs">
+        <div class="req"><i>1</i><div><b>RNC inscrito</b> en el Registro Nacional de Contribuyentes.</div></div>
+        <div class="req"><i>2</i><div><b>Alta NCF:</b> autorización vigente para emitir comprobantes fiscales.</div></div>
+        <div class="req"><i>3</i><div><b>Oficina Virtual activa</b> del contribuyente y del usuario administrador de e-CF, con dispositivo de seguridad: Token, Tarjeta de Código o SoftToken.</div></div>
+        <div class="req"><i>4</i><div><b>Certificado digital de persona física</b> para procedimientos tributarios, a nombre de quien será el administrador de e-CF. Se obtiene gratis dentro del Facturador o se compra a una entidad aprobada por INDOTEL (Viafirma, Digifirma, Novofirma).</div></div>
+        <div class="req"><i>5</i><div><b>Computador con internet.</b> El Facturador Gratuito no es una app: se usa desde el navegador.</div></div>
+        <div class="req"><i>6</i><div><b>No haber sido autorizado antes</b> a emitir e-CF mediante un sistema distinto al Facturador Gratuito.</div></div>
+      </div>
+    </section>
+
+    <section id="pasos">
+      <h2>El recorrido completo</h2>
+      <p class="lead">Seis pasos. Los pasos 1, 2 y 3 dependen del contribuyente y de su representante, no de ti. El resto ya es configuración.</p>
+
+      <div class="step-card">
+        <div class="step-head"><span class="num">01</span><h3>Solicitar el Facturador en la OFV</h3></div>
+        <ol>
+          <li>Entrar a la Oficina Virtual con el usuario y la clave del contribuyente.</li>
+          <li>Menú <b>Solicitudes</b> → <b>Facturador Gratuito</b>.</li>
+          <li>Completar el formulario con los datos del RNC y del representante.</li>
+          <li>Enviar la solicitud.</li>
+        </ol>
+        <p class="inline-note">El formulario solo lo puede completar un contribuyente jurídico o una persona física residente en el país. El representante debe tener una relación válida: socio, administrador, accionista, miembro o usuario administrador de e-CF.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head"><span class="num">02</span><h3>Aceptar los roles en el Buzón de la OFV</h3></div>
+        <p>El representante entra a su propia OFV, abre el Buzón de Mensajes y acepta el mensaje <b>“Delegación de Rol de Facturación Electrónica”</b>. Ahí se asignan los roles de administrador de contribuyente, firmante autorizado y aprobador comercial.</p>
+        <p class="inline-note">Si el contribuyente es persona física y se eligió a sí mismo como representante, los roles se asignan automáticamente y este paso se salta.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head"><span class="num">03</span><h3>Crear el usuario del Facturador</h3></div>
+        <ol>
+          <li>En el Buzón, abrir el mensaje <b>“Solicitud de Creación de Credenciales Facturador Gratuito”</b>.</li>
+          <li>Hacer clic en <b>“Click aquí para crear el usuario”</b>.</li>
+          <li>Crear la contraseña y aceptar los términos y condiciones.</li>
+        </ol>
+        <p class="inline-note">La contraseña necesita 8 caracteres o más, una mayúscula, al menos un número, un carácter especial y no puede ser igual al usuario ni al RNC. Si el enlace caducó, se usa <b>“¿No recibiste cómo crear tus accesos?”</b> en el login del Facturador.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head"><span class="num">04</span><h3>Obtener el certificado digital gratuito</h3></div>
+        <ol>
+          <li>Dentro del Facturador, elegir <b>Solicitar Certificado Digital</b>.</li>
+          <li>Aceptar los términos del contrato de certificado gratuito.</li>
+          <li>Completar teléfono, correo y la contraseña del certificado (8 a 18 caracteres, con mayúsculas, minúsculas y números; <b>sin caracteres especiales</b>).</li>
+          <li>Verificar identidad: escanear el código QR con el celular y capturar la cédula por ambos lados, más un video del rostro.</li>
+          <li>Firmar el contrato con el código OTP de 6 dígitos que llega al correo registrado.</li>
+          <li>Descargar el archivo <code>.p12</code> y guardarlo sin modificar el formato.</li>
+        </ol>
+        <p class="inline-note">El certificado gratuito de la DGII sirve <b>solo</b> para el Facturador Gratuito. Si el cliente va a usar otro sistema, necesita un certificado de una entidad de certificación aprobada por INDOTEL.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head"><span class="num">05</span><h3>Solicitar las secuencias de e-NCF</h3></div>
+        <ol>
+          <li>Entrar a la OFV con usuario y clave.</li>
+          <li>Menú <b>Solicitudes</b> → <b>Comprobantes Fiscales</b>.</li>
+          <li>Completar el formulario y pulsar <b>Agregar</b>.</li>
+          <li>Pulsar <b>Enviar Solicitud</b> y guardar el número de seguimiento.</li>
+        </ol>
+        <p class="inline-note">La DGII indica un tiempo de respuesta de 24 horas. Sin secuencias autorizadas no se puede emitir: el Facturador asigna automáticamente el siguiente e-NCF disponible.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head"><span class="num">06</span><h3>Configurar el perfil y emitir</h3></div>
+        <ol>
+          <li>Entrar a <a href="https://fg.dgii.gov.do/ecf/portalfg/" target="_blank" rel="noopener">fg.dgii.gov.do/ecf/portalfg</a> con RNC empresa, RNC/cédula del delegado y contraseña.</li>
+          <li>En <b>Perfil</b>, cargar logo (debe ser JPEG), nombre comercial, dirección, correo, teléfono, provincia y municipio.</li>
+          <li>En <b>Emitir e-CF</b>, elegir tipo de comprobante, fecha y tipo de ingreso.</li>
+          <li>Completar comprador (RNC/cédula y razón social) y el detalle: descripción, bien o servicio, cantidad, precio y tasa de ITBIS (18%, 16%, 0% o exento).</li>
+          <li>Usar <b>Generar y Mostrar</b> para revisar la representación impresa o el XML antes de firmar.</li>
+          <li>Pulsar <b>Firmar y Enviar</b>, cargar el <code>.p12</code>, escribir la clave privada y firmar.</li>
+        </ol>
+        <p class="inline-note">Las casillas de retención solo se habilitan para comprobante de compras (tipo 41) y pagos al exterior (tipo 47). Para el resto, se emite normal y se pide la carta de retención al cliente.</p>
+      </div>
+    </section>
+
+    <section id="estados">
+      <h2>Qué significa cada estado</h2>
+      <p class="lead">Después de firmar, el e-CF se envía solo a la DGII. El resultado aparece en <b>Consultas</b>.</p>
+      <table>
+        <thead>
+          <tr><th>Estado</th><th>Qué significa</th><th>Qué hacer</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b class="ok">Aceptado</b></td><td>Válido para fines tributarios.</td><td>Entregar la representación impresa o el XML al comprador.</td></tr>
+          <tr><td><b class="ok">Aceptado condicional</b></td><td>Vale, pero hay una irregularidad que debe corregirse en las próximas facturas.</td><td>Leer el motivo y corregir antes de la siguiente emisión.</td></tr>
+          <tr><td><b class="warn">En proceso</b></td><td>La DGII todavía no ha validado.</td><td>Consultar de nuevo más tarde, con el e-NCF a mano.</td></tr>
+          <tr><td><b class="bad">Rechazado</b></td><td>No es válido para fines tributarios. La representación impresa sale con la marca “e-CF sin valor fiscal”.</td><td>Leer el motivo, corregir los datos y emitir de nuevo. No entregar ese documento como factura.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="errores">
+      <h2>Los tropiezos que se repiten</h2>
+      <div class="step-card">
+        <ul>
+          <li><b>No aparecen los botones “Revisar más tarde” y “Aceptar”.</b> Reducir el zoom del navegador.</li>
+          <li><b>El enlace de credenciales caducó.</b> Usar “¿No recibiste cómo crear tus accesos?” en el login.</li>
+          <li><b>Contraseña del certificado rechazada.</b> Debe tener entre 8 y 18 caracteres, con mayúsculas, minúsculas y números, y ningún carácter especial.</li>
+          <li><b>El sistema no acepta el certificado.</b> Tiene que ser el <code>.p12</code> descargado, sin convertirlo ni renombrarlo.</li>
+          <li><b>Se rechaza la factura por el comprador.</b> Verificar RNC/cédula y razón social exactos; en consumo electrónico desde RD$250,000 se requiere identificación del extranjero cuando aplique.</li>
+          <li><b>La sesión se cierra sola.</b> El Facturador cierra a los 60 segundos de inactividad: guardar antes de levantarse.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="fuentes">
+      <h2>De dónde sale esto</h2>
+      <p>Todo lo anterior está tomado de documentos oficiales, no de blogs:</p>
+      <ul>
+        <li><a href="https://dgii.gov.do/cicloContribuyente/facturacion/comprobantesFiscalesElectronicosE-CF/Facturador%20Gratuito/Instructivo-Facturador-Gratuito-de-FE.pdf" target="_blank" rel="noopener">Instructivo para el uso del Facturador Gratuito de FE</a>, versión 2.0, julio 2026 (49 páginas).</li>
+        <li><a href="https://fg.dgii.gov.do/ecf/PortalFG/assets/requisitos-facturador-gratuito.pdf?v=2.0" target="_blank" rel="noopener">Requisitos para optar por el uso del Facturador Gratuito</a>, versión septiembre 2026.</li>
+        <li><a href="https://dgii.gov.do/cicloContribuyente/facturacion/comprobantesFiscalesElectronicosE-CF/Paginas/facturador-gratuito.aspx" target="_blank" rel="noopener">Página oficial del Facturador Gratuito</a>.</li>
+      </ul>
+      <p class="inline-note">Los plazos y pantallas pueden cambiar. Si algo no coincide con lo que ves, manda el pantallazo y lo reviso. No invento pasos para que la guía se vea completa.</p>
+    </section>
+
+    <section class="cta" id="contacto">
+      <h2>Si tu cliente tiene que facturar y tú no tienes el día libre</h2>
+      <p>Configuro el emisor, el certificado, las secuencias y la primera factura de prueba. Tú mantienes la asesoría fiscal y la relación con el cliente.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/18494080206?text=Hola%20Fabian%2C%20le%C3%AD%20la%20gu%C3%ADa%20del%20Facturador%20Gratuito%20y%20quiero%20revisar%20el%20caso%20de%20un%20cliente." data-wa>Escribir por WhatsApp</a>
+        <a class="btn btn-ghost" href="../ficha-cliente/">Descargar la ficha del cliente</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>FacturaLista RD — implementación técnica de facturación electrónica en República Dominicana.</p>
+      <p>No sustituye asesoría fiscal, legal ni contable. La certificación del software la tiene el proveedor, no el implementador.</p>
+      <p><a href="../">Inicio</a> · <a href="../ficha-cliente/">Ficha del contribuyente</a></p>
+    </footer>
+  </div>
+  <script src="../config.js"></script>
+  <script>
+    (function () {
+      var site = window.SITE || {};
+      if (!site.whatsapp) return;
+      var link = "https://wa.me/" + site.whatsapp + "?text=" + encodeURIComponent(
+        site.whatsappText || "Hola Fabian, leí la guía del Facturador Gratuito y quiero revisar el caso de un cliente."
+      );
+      document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = link; });
+    })();
+  </script>
+</body>
+</html>
